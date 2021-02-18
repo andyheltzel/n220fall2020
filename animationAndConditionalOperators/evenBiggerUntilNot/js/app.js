@@ -18,4 +18,5 @@ function draw() {
     fill("yellow");
     circle(200,200,sizeInc);
 
+    // console.log(sizeInc);
 }
