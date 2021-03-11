@@ -1,3 +1,4 @@
+
 var objectProp = {
     xPos: 200,
     yPos: 200,
@@ -7,21 +8,17 @@ var objectProp = {
     boundaries: 400,
     create: function(){
         fill(this.color);
-        this.wdth;
-        this.hght;
-        noStroke();
-        rectMode(CENTER);
-        if(this.wdth === 400){
-            this.wdth = 0
-        }
-        rect(this.xPos, this.yPos, this.wdth, this.hght);
-        
+        rect(this.xPos,this.yPos, this.wdth, this.hght);
     }
 }
+
 function setup(){
     createCanvas(400,400);
 }
 
+
 function draw(){
     objectProp.create();
 }
+
+
