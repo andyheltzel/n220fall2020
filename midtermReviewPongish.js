@@ -1,5 +1,9 @@
-var xPos = 0;
-var speed = 3;
+var xPos = 180;
+var yPos = 180;
+var xSpeed = 3;
+var ySpeed = 1;
+var r = 35;
+
 
 var paddle = {
   hght : 100,
@@ -12,6 +16,32 @@ var paddle = {
 }
 }
 
+var ball = {
+  xPos : 180,
+  yPos : 180,
+  xSpeed : 3,
+  ySpeed : 1,
+  r : 35,
+  createBall: function(){
+    circle(this.xPos, this.yPos, this.r);
+  if(this.xPos > width || this.xPos < -1) {
+    this.xSpeed = -this.xSpeed
+  }
+  
+  this.xPos = this.xPos + this.xSpeed;
+  
+  if(this.yPos > width || this.yPos < -1) {
+    this.ySpeed = -this.ySpeed
+  }
+  
+  this.yPos = this.yPos + this.ySpeed;
+  }
+}
+
+function hitTestPoint(){
+  
+}
+
 function setup() {
   createCanvas(400, 400);
    background(220);
@@ -20,12 +50,6 @@ function setup() {
 
 function draw() {
  paddle.createPaddle();
-  circle(xPos, 200, 100);
-  if(xPos > width) {
-    speed = -3
-  }
-  
-  xPos = xPos + speed;
+  ball.createBall();
   
 }
-
