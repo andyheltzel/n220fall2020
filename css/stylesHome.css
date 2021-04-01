@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body .homeItems {
+  background-color: aqua;
+  width: 20%;
+  margin: 0 auto;
+}
+
