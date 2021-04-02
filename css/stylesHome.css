@@ -4,9 +4,18 @@
   box-sizing: border-box;
 }
 
-body .homeItems {
-  background-color: aqua;
+body {
+  /* background-color: aqua; */
   width: 20%;
-  margin: 0 auto;
+  margin: auto;
 }
+
+.homeContents {
+
+  margin-top: 50%;
+  text-align: center;
+  /* background-color: aquamarine; */
+
+}
+
 
