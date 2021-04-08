@@ -9,6 +9,8 @@ let wdt = 100;
 
 dvOne.style.height = hgt + "px";
 dvOne.style.width = wdt + "px";
+dvOne.style.backgroundColor = "#C1E1C1"
+dvOne.innerHTML = "mouse over to begin"
 //setting the standard styling of the square
 
 function widen(){
