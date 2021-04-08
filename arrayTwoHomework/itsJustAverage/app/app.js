@@ -4,6 +4,7 @@ let averageDisplay = document.getElementById("averageDisplay")
 //converts the respective HTML elements to workable JS variables
 
 function findAverage(){
+
     var values = averageBox.value;
     //converts the string input into a variable
     let theArray = values.split(",")
