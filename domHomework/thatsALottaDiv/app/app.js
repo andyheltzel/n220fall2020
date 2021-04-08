@@ -7,6 +7,6 @@ for(i = 0; i < 100; i++){
     squares.style.height = "20px"
     squares.style.float = "left"
     squares.style.margin = "3px"
-    squares.style.backgroundColor = "#" + "ffff00"
+    squares.style.backgroundColor = "#" + "ffff0" + [i]
 }
 
