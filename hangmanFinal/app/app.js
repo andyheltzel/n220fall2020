@@ -1,4 +1,4 @@
-wordBank = ["word", "letter", "number", "alphabet", "integer", "comma", "period", "colon", "hyphen", "apostrophe"]
+wordBank = ["word", "dog", "goat", "mark", "water", "smile", "period", "car", "hyphen", "kentucky"]
 
 var valueOfCurrentWord = myWord();
 console.log(valueOfCurrentWord)
@@ -15,7 +15,89 @@ function setup(){
     background("grey")
 }
 
-function draw(){
+
+function buttonDisable(wordID){
+    if(wordID === "a"){
+        document.getElementById("a").setAttribute("disabled", true)
+    }
+    if(wordID === "b"){
+        document.getElementById("b").setAttribute("disabled", true)
+    }
+    if(wordID === "c"){
+        document.getElementById("c").setAttribute("disabled", true)
+    }
+    if(wordID === "d"){
+        document.getElementById("d").setAttribute("disabled", true)
+    }
+    if(wordID === "e"){
+        document.getElementById("e").setAttribute("disabled", true)
+    }
+    if(wordID === "f"){
+        document.getElementById("f").setAttribute("disabled", true)
+    }
+    if(wordID === "g"){
+        document.getElementById("g").setAttribute("disabled", true)
+    }
+    if(wordID === "h"){
+        document.getElementById("h").setAttribute("disabled", true)
+    }
+    if(wordID === "i"){
+        document.getElementById("i").setAttribute("disabled", true)
+    }
+    if(wordID === "j"){
+        document.getElementById("j").setAttribute("disabled", true)
+    }
+    if(wordID === "k"){
+        document.getElementById("k").setAttribute("disabled", true)
+    }
+    if(wordID === "l"){
+        document.getElementById("l").setAttribute("disabled", true)
+    }
+    if(wordID === "m"){
+        document.getElementById("m").setAttribute("disabled", true)
+    }
+    if(wordID === "n"){
+        document.getElementById("n").setAttribute("disabled", true)
+    }
+    if(wordID === "o"){
+        document.getElementById("o").setAttribute("disabled", true)
+    }
+    if(wordID === "p"){
+        document.getElementById("p").setAttribute("disabled", true)
+    }
+    if(wordID === "q"){
+        document.getElementById("q").setAttribute("disabled", true)
+    }
+    if(wordID === "r"){
+        document.getElementById("r").setAttribute("disabled", true)
+    }
+    if(wordID === "s"){
+        document.getElementById("s").setAttribute("disabled", true)
+    }
+    if(wordID === "t"){
+        document.getElementById("t").setAttribute("disabled", true)
+    }
+    if(wordID === "u"){
+        document.getElementById("u").setAttribute("disabled", true)
+    }
+    if(wordID === "v"){
+        document.getElementById("v").setAttribute("disabled", true)
+    }
+    if(wordID === "w"){
+        document.getElementById("w").setAttribute("disabled", true)
+    }
+    if(wordID === "x"){
+        document.getElementById("x").setAttribute("disabled", true)
+    }
+    if(wordID === "y"){
+        document.getElementById("y").setAttribute("disabled", true)
+    }
+    if(wordID === "z"){
+        document.getElementById("z").setAttribute("disabled", true)
+    }
+}
+
+function drawHangman(){
     if(wrong === 1){
         line(100, 300, 300, 300)
     }
@@ -49,6 +131,7 @@ function draw(){
     }
 }
 
+
 function myWord() {
     var currentWord = wordBank[Math.floor(Math.random()*wordBank.length)];
     return currentWord;
@@ -57,7 +140,6 @@ function myWord() {
 function guess(wordID){
 
     letterCheck = wordDisplay.includes(wordID)
-    
     console.log(letterCheck)
 
     if (letterCheck == true){
@@ -66,6 +148,8 @@ function guess(wordID){
     }else{
         wrong++
     }
+    
+    drawHangman();
 
     if(wrong === 10){
         alert("You lost!")
@@ -75,5 +159,6 @@ function guess(wordID){
         alert("You got the word!")
     }
 
+    
 }
 
