@@ -10,10 +10,14 @@ workingWord = []
 
 wrong = 0
 
+spots = [spotOne, spotTwo, spotThree, spotFour]
+
 spotOne = document.getElementById("spotOne")
 spotTwo = document.getElementById("spotTwo")
 spotThree = document.getElementById("spotThree")
 spotFour = document.getElementById("spotFour")
+
+spots = [spotOne, spotTwo, spotThree, spotFour];
 
 function setup(){
     createCanvas(400, 400);
@@ -154,6 +158,8 @@ function guess(wordID){
         wrong++
     }
     
+    spots[0].innerHTML = wordID
+
     drawHangman();
 
     if(wrong === 10){
