@@ -1,28 +1,35 @@
 wordBank = ["word", "fact", "goat", "mark", "fire", "foil", "earn", "ends", "five", "four"]
+//This establishes my array of possible words
 
 var valueOfCurrentWord = myWord();
 console.log(valueOfCurrentWord)
+//this assigns the return value of myWord() to a variable
 
 wordDisplay = valueOfCurrentWord.split("")
 console.log(wordDisplay)
+//this splits up the randomly selected word from wordBank[] into an array of letters to be guessed
 
 workingWord = []
+//established an empty array to store the correctly guessed letters
 
 wrong = 0
+//establishes a global varaible for the hangman drawing function to start off of.
+
+spotsInt = -1
+//establishes a global variable for the correctly guessed words to start off of
 
 spots = [spotOne, spotTwo, spotThree, spotFour]
-
 spotOne = document.getElementById("spotOne")
 spotTwo = document.getElementById("spotTwo")
 spotThree = document.getElementById("spotThree")
 spotFour = document.getElementById("spotFour")
-
-spots = [spotOne, spotTwo, spotThree, spotFour];
+//Using DOM to retrieve the divs by ID in which the correctly guessed letters will be placed
 
 function setup(){
     createCanvas(400, 400);
     background("grey")
 }
+//establishes the background for the gallows to be drawn on
 
 
 function buttonDisable(wordID){
@@ -105,6 +112,7 @@ function buttonDisable(wordID){
         document.getElementById("z").setAttribute("disabled", true)
     }
 }
+//disables the buttons once they have been clicked. Uses if statements to check.
 
 function drawHangman(){
     if(wrong === 1){
@@ -139,37 +147,41 @@ function drawHangman(){
         // background("red")
     }
 }
+//draws the gallows and man everytime an incorrect letter is guessed.
 
 
 function myWord() {
     var currentWord = wordBank[Math.floor(Math.random()*wordBank.length)];
     return currentWord;
 }
+//randomly selectes a word from wordBank[]
+
 
 function guess(wordID){
-
     letterCheck = wordDisplay.includes(wordID)
-    console.log(letterCheck)
-
+    //assigning a tool that checks if my word contains the letter that the user is clicking on. Will return true or false.
+    
     if (letterCheck == true){
+        spotsInt++
+        // console.log(spotsInt)
         workingWord.push(wordID)
         console.log(workingWord)
+        spots[spotsInt].innerHTML = wordID
     }else{
         wrong++
     }
-    
-    spots[0].innerHTML = wordID
+    //Checks to see if the letter is in the word, if it is true, it will add the letter to the spot in the div, and add the letter to the working array. If it is wrong, it will draw on the canvas.
 
     drawHangman();
+    //calls the drawHangman(), the conditionals inside the function makes sure that this does not run unless the letter is guessed incorrectly.
 
     if(wrong === 10){
-        alert("You lost!")
+        alert("You lost! Hit refresh or ctrl + r to restart!")
     }
+    //if wrong holds a value equal to 10, it runs an alert saying you lost.
 
     if(JSON.stringify(wordDisplay) === JSON.stringify(workingWord)){
-        alert("You got the word!")
-    }
-
-    
+        alert("You got the word! Hit refresh or ctrl + r to try again!")
+    } 
 }
-
+//this is the meat and potatoes of how my program works.
