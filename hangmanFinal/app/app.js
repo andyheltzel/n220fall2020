@@ -1,4 +1,4 @@
-wordBank = ["word", "dog", "goat", "mark", "water", "smile", "period", "car", "hyphen", "kentucky"]
+wordBank = ["word", "fact", "goat", "mark", "fire", "foil", "earn", "ends", "five", "four"]
 
 var valueOfCurrentWord = myWord();
 console.log(valueOfCurrentWord)
@@ -9,6 +9,11 @@ console.log(wordDisplay)
 workingWord = []
 
 wrong = 0
+
+spotOne = document.getElementById("spotOne")
+spotTwo = document.getElementById("spotTwo")
+spotThree = document.getElementById("spotThree")
+spotFour = document.getElementById("spotFour")
 
 function setup(){
     createCanvas(400, 400);
